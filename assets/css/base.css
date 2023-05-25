@@ -1,0 +1,282 @@
+:root{
+    --color1: #41B5D0;
+    --color2: #ffc800;
+    --color3: #5b6c8f;
+    --color4: #FFFFFF;
+    --color5: #1599C8;
+    --color6: #FC0865;
+    --color7: #FD8509;
+    --color8: #FEBEA8;
+    --color9: #FFEBB4;
+    --color10: #777777;
+    --color11: #F3FBFD;
+    --color12: #C8F2FD;
+     --color14: #008141;
+    --color13: linear-gradient(to right, rgb(30, 12, 157), rgba(6, 205, 236, 1));
+    --font : 'Inria Serif', serif;
+    --font1 : 'Rajdhani', sans-serif;
+    
+}
+.container{
+     width: 100%;
+     max-width: 1300px;
+     margin: 0 auto;
+}
+@media(max-width : 992px){
+    .container{
+        max-width: 720px;
+
+    }
+}
+@media (max-width : 768px){
+    .container{
+        max-width: 540px;
+
+    }
+}
+@media (max-width : 576px){
+    .container{
+        max-width: calc(100% - 30px);
+    }
+}
+a{
+    text-decoration: none;
+}
+.content1 .noidung button{
+    background: var(--color2);
+    border: solid 1px white;
+    padding: 15px 50px;
+    color: aliceblue;
+    font-size: 20px;
+    border-radius: 50px;
+    margin-top: 9px;
+}
+.content1 .noidung .button1:hover{
+
+    color: var(--color2);
+    background: white;
+
+}
+
+.content2 .cauhinh .noidung .buttontong:hover{
+ background: var(--color4);
+ color: red;
+ 
+}
+
+.button1{
+    background: var(--color2);
+    border: solid 1px white;
+    padding: 15px 50px;
+    color: aliceblue;
+    font-size: 20px;
+    border-radius: 50px;
+    margin-top: 9px;
+}
+.button1:hover{
+    color: var(--color2);
+    background: white;
+    border: 1px solid var(--color2);
+}
+
+.button2{
+    padding: 8px 34px;
+    border-radius: 50px;
+    color: var(--color4);
+    background: var(--color1);
+    font-size: 20px;
+}
+.button2:hover{
+    background: white;
+    border: 1px solid green;
+    color: green;
+}
+body{
+    font-family: var(--font);
+}
+.anbar{
+    display: none;
+}
+.anbar.hienthibar{
+    display: block;
+}
+.headerbar{
+    position: absolute;
+    background: url(../images/img-4.jpg);
+    box-shadow: #88a5bf7a 6px 2px 16px, #fffc -6px -2px 16px;
+    color: white;
+    width: 40%;
+    height: auto;
+    left: 35%;
+    top: 130%;
+    z-index: 99999;
+    font-size: 20px;
+    font-family: var(--font1);
+    font-weight: 600;
+}
+.headerbar ul{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+}
+.headerbar ul li{
+    margin-bottom: 20px;
+}
+
+.headerbar ul li a{
+    color: white;
+}
+.headerbar ul li a:hover{
+    background: white;
+    color: var(--color1);
+    box-shadow: #88a5bf7a 6px 2px 16px, #fffc -6px -2px 16px;
+    padding: 10px;
+
+}
+
+
+
+
+
+/* content11 */
+.content11 {
+    background: var(--color1);
+    padding: 20px 0;
+}
+
+.content11 .nd {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.content11 .nd .ndc {
+    width: 25%;
+    color: var(--color4);
+    padding: 50px
+}
+
+.content11 .nd h2 {
+    font-size: 25px;
+    margin: 0;
+    font-family: var(--font1);
+}
+
+.content11 .nd .ndc1 p {
+    font-size: 19px;
+    margin-top: 30px;
+}
+
+.content11 .nd .ndc1 img {
+    margin-top: 15px;
+    font-size: 30px;
+    width: 40%;
+}
+
+.content11 .nd .ndc1 ul {
+    display: flex;
+    list-style-type: none;
+    justify-content: space-between;
+    padding: 0;
+    margin: 0;
+    margin-top: 15px;
+}
+
+.content11 .nd .ndc1 ul li img {
+    width: 80%;
+}
+
+.content11 .nd .ndc2 ul {
+    list-style: none;
+    padding: 0;
+    font-size: 19px;
+}
+
+.content11 .nd .ndc2 ul li {
+    margin-top: 20px;
+}
+
+.content11 .nd .ndc3 ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    margin-top: 20px;
+    font-size: 19px;
+}
+
+.content11 .nd .ndc3 ul li {
+    margin-top: 25px;
+}
+
+.content11 .nd .ndc3 ul li i {
+    margin-right: 10px;
+}
+
+.content11 .nd .ndc3 .h2 {
+    margin-top: 30px;
+}
+
+.content11 .nd .ndc3 input {
+    padding: 15px 30px;
+    margin-top: 40px;
+    width: 90%;
+    font-size: 19px;
+    border-radius: 30px;
+    border: 1px solid wheat;
+    color: red;
+}
+
+/* end content11 */
+
+
+
+
+ /* media content11 */
+
+@media(max-width : 992px) {
+    .content11 .nd .ndc {
+        width: 85%;
+        color: var(--color4);
+        padding: 50px
+    }
+}
+
+
+@media(max-width : 768px) {
+    .content11 .nd .ndc {
+        width: 100%;
+        color: var(--color4);
+        padding: 50px
+    }
+}
+
+
+@media(max-width : 576px) {
+    
+}
+
+ /* end media content11 */
+
+
+ 
+
+/* content12 */
+.content12 {
+    padding: 50px;
+}
+
+.content12 .cauhinh .noidung1 {
+    color: red;
+    font-weight: 600;
+    font-size: 18px;
+    text-align: center;
+}
+
+.content12 .cauhinh .noidung1 i {
+    padding: 10px;
+    color: black;
+}
+
+

@@ -1,0 +1,330 @@
+(function() {
+  var __sections__ = {};
+  (function() {
+    for(var i = 0, s = document.getElementById('sections-script').getAttribute('data-sections').split(','); i < s.length; i++)
+      __sections__[s[i]] = true;
+  })();
+  (function() {
+  if (!__sections__["abt-overlay-grid"] && !window.DesignMode) return;
+  try {
+    
+class GridSlider4 extends HTMLElement {
+  constructor() {
+    super();
+    this.slider = this.querySelector('[data-slider-options]');
+    this.init();
+  }
+
+  init() {
+    const predefine = {
+      effect: 'slide',
+      direction: 'horizontal',
+      autoplay: true,
+      autoplaySpeed: 5,
+      space: 30,
+      center: true,
+      options: {},
+    };
+    const slider_options = this.slider.getAttribute('data-slider-options');
+    if (slider_options === null || slider_options === '') {
+      return null;
+    }
+   
+    const grouping = $.extend(true, predefine, JSON.parse(slider_options));
+    const isNumberic = /^\d+$/;
+    Object.keys(grouping).forEach((key) => {
+      if (typeof grouping[key] === 'string' && isNumberic.test(grouping[key])) {
+        grouping[key] = parseInt(grouping[key], 10);
+      }
+    });
+    let autoplay = false;
+    if (grouping.auto_play > 0) {
+      autoplay = {
+        delay: grouping.auto_play * 1000,
+      };
+    }
+    let loop = false;
+    let centeredSlides = false;
+    if (grouping.loop === 'true' || grouping.loop === true) {
+      loop = true;
+    } else {
+      if (grouping.loop === 1 ) {
+        loop = true;
+        centeredSlides = true;
+      } else {
+        centeredSlides = false;
+        loop = false;
+      }
+    }
+    const option = $.extend(true, {
+      init: false,
+      loop,
+      autoplay,
+      centeredSlides,
+      navigation: {
+        nextEl: this.slider.querySelector('.swiper-button-next'),
+        prevEl: this.slider.querySelector('.swiper-button-prev'),
+      },
+      pagination: {
+        el: this.slider.querySelector('.swiper-pagination'),
+        clickable: true,
+      },
+      lazy: true,
+      breakpoints: {
+       320: {
+         slidesPerView: grouping.mobile,
+         slidesPerColumn: 1,
+         spaceBetween: grouping.mobile_space,
+       },
+       767: {
+         slidesPerView: grouping.tablet,
+         slidesPerColumn: 1,
+         spaceBetween: grouping.tab_space,
+       },
+       992: {
+         slidesPerView: grouping.desktop,
+         slidesPerColumn: 1,
+         spaceBetween: grouping.desktop_space,
+       },
+     },
+    }, grouping.options);
+    const container = this.slider.querySelector('[data-grid-slider-4]');
+    const initiate = new Swiper(container, option);
+    initiate.on('init', () => {
+    initiate.update();
+    });
+    initiate.init();
+  }
+}
+
+customElements.define('grid-slider-4', GridSlider4);
+  
+  } catch(e) { console.error(e); }
+})();
+
+(function() {
+  if (!__sections__["deal-banner-with-video"] && !window.DesignMode) return;
+  try {
+    
+$(document).ready(function () {
+  $(".video__btn-play").on("click", function (e) {
+    e.preventDefault();
+    $('body').addClass('overlay-active');
+    $(".video-popup").css('display','flex');
+    $(".video-popup,.video-container,.video-wrapper,.pop-up__video-close ").show();
+    var srchref = "",
+        autoplay = "",
+        id = $(this).data("id");
+    if ($(this).data("type") == "vimeo")
+      var srchref = "//player.vimeo.com/video/";
+    else if ($(this).data("type") == "youtube")
+      var srchref = "https://www.youtube.com/embed/";
+    if ($(this).data("autoplay") == true) autoplay = "?autoplay=1";
+    $("#video-popup-iframe").attr("src", srchref + id + autoplay);
+    $("#video-popup-iframe").on("load", function () {
+      $(".video-wrapper").show();
+    });
+  });
+
+  $(".pop-up__video-close , .video-popup").on("click", function (e) {
+     $('body').removeClass('overlay-active');
+    $(".video-container,.video-wrapper,.pop-up__video-close ,.video-popup").hide();
+    $("#video-popup-iframe").attr("src", "");
+  });
+});
+
+
+  } catch(e) { console.error(e); }
+})();
+
+(function() {
+  if (!__sections__["header"]) return;
+  try {
+    
+  class StickyHeader extends HTMLElement {
+    constructor() {
+      super();
+    }
+
+    connectedCallback() {
+      this.header = document.getElementById('shopify-section-header');
+      this.headerBounds = {};
+      this.currentScrollTop = 0;
+      this.preventReveal = false;
+      this.predictiveSearch = this.querySelector('predictive-search');
+
+      this.onScrollHandler = this.onScroll.bind(this);
+      this.hideHeaderOnScrollUp = () => this.preventReveal = true;
+
+      this.addEventListener('preventHeaderReveal', this.hideHeaderOnScrollUp);
+      window.addEventListener('scroll', this.onScrollHandler, false);
+
+      this.createObserver();
+    }
+
+    disconnectedCallback() {
+      this.removeEventListener('preventHeaderReveal', this.hideHeaderOnScrollUp);
+      window.removeEventListener('scroll', this.onScrollHandler);
+    }
+
+    createObserver() {
+      let observer = new IntersectionObserver((entries, observer) => {
+        this.headerBounds = entries[0].intersectionRect;
+        observer.disconnect();
+      });
+
+      observer.observe(this.header);
+    }
+
+    onScroll() {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+      if (this.predictiveSearch && this.predictiveSearch.isOpen) return;
+
+      if (scrollTop > this.currentScrollTop && scrollTop > this.headerBounds.bottom) {
+        if (this.preventHide) return;
+        requestAnimationFrame(this.hide.bind(this));
+      } else if (scrollTop < this.currentScrollTop && scrollTop > this.headerBounds.bottom) {
+        if (!this.preventReveal) {
+          requestAnimationFrame(this.reveal.bind(this));
+        } else {
+          window.clearTimeout(this.isScrolling);
+
+          this.isScrolling = setTimeout(() => {
+            this.preventReveal = false;
+          }, 66);
+
+          requestAnimationFrame(this.hide.bind(this));
+        }
+      } else if (scrollTop <= this.headerBounds.top) {
+        requestAnimationFrame(this.reset.bind(this));
+      }
+
+      this.currentScrollTop = scrollTop;
+    }
+
+    hide() {
+      this.header.classList.add('shopify-section-header-hidden', 'shopify-section-header-sticky');
+      this.closeMenuDisclosure();
+      // this.closeSearchModal();
+    }
+
+    reveal() {
+      this.header.classList.add('shopify-section-header-sticky', 'animate');
+      this.header.classList.remove('shopify-section-header-hidden');
+    }
+
+    reset() {
+      this.header.classList.remove('shopify-section-header-hidden', 'shopify-section-header-sticky', 'animate');
+    }
+
+    closeMenuDisclosure() {
+      this.disclosures = this.disclosures || this.header.querySelectorAll('header-menu');
+      this.disclosures.forEach(disclosure => disclosure.close());
+    }
+
+    // closeSearchModal() {
+    //   this.searchModal = this.searchModal || this.header.querySelector('details-modal');
+    //   this.searchModal.close(false);
+    // }
+  }
+
+  customElements.define('sticky-header', StickyHeader);
+        
+        
+  class LocalizationForm extends HTMLElement {
+    constructor() {
+      super();
+      this.elements = {
+        input: this.querySelector('input[name="locale_code"], input[name="country_code"]'),
+        button: this.querySelector('button'),
+        panel: this.querySelector('.disclosure__list-wrapper'),
+      };
+      this.elements.button.addEventListener('click', this.openSelector.bind(this));
+      this.elements.button.addEventListener('focusout', this.closeSelector.bind(this));
+      this.addEventListener('keyup', this.onContainerKeyUp.bind(this));
+
+      this.querySelectorAll('a').forEach(item => item.addEventListener('click', this.onItemClick.bind(this)));
+    }
+
+    hidePanel() {
+      this.elements.button.setAttribute('aria-expanded', 'false');
+      this.elements.panel.setAttribute('hidden', true);
+    }
+
+    onContainerKeyUp(event) {
+      if (event.code.toUpperCase() !== 'ESCAPE') return;
+
+      this.hidePanel();
+      this.elements.button.focus();
+    }
+
+    onItemClick(event) {
+      event.preventDefault();
+      const form = this.querySelector('form');
+      this.elements.input.value = event.currentTarget.dataset.value;
+      if (form) form.submit();
+    }
+
+    openSelector() {
+      this.elements.button.focus();
+      this.elements.panel.toggleAttribute('hidden');
+      this.elements.button.setAttribute('aria-expanded', (this.elements.button.getAttribute('aria-expanded') === 'false').toString());
+    }
+
+    closeSelector(event) {
+      const shouldClose = event.relatedTarget && event.relatedTarget.nodeName === 'BUTTON';
+      if (event.relatedTarget === null || shouldClose) {
+        this.hidePanel();
+      }
+    }
+  }
+
+  customElements.define('localization-form', LocalizationForm);
+
+  } catch(e) { console.error(e); }
+})();
+
+(function() {
+  if (!__sections__["product-recommendations"]) return;
+  try {
+    
+  class ProductRecommendations extends HTMLElement {
+    constructor() {
+      super();
+
+      const handleIntersection = (entries, observer) => {
+        if (!entries[0].isIntersecting) return;
+        observer.unobserve(this);
+
+        fetch(this.dataset.url)
+          .then(response => response.text())
+          .then(text => {
+            const html = document.createElement('div');
+            html.innerHTML = text;
+            const recommendations = html.querySelector('product-recommendations');
+
+            if (recommendations && recommendations.innerHTML.trim().length) {
+              this.innerHTML = recommendations.innerHTML;
+              $('.loading-image').removeClass('loading-image').addClass('loaded-image');
+            }
+
+            if (html.querySelector('.grid__item')) {
+              this.classList.add('product-recommendations--loaded');
+            }
+          })
+          .catch(e => {
+            console.error(e);
+          });
+      }
+
+      new IntersectionObserver(handleIntersection.bind(this), {rootMargin: '0px 0px 200px 0px'}).observe(this);
+    }
+  }
+
+  customElements.define('product-recommendations', ProductRecommendations);
+
+  } catch(e) { console.error(e); }
+})();
+
+})();

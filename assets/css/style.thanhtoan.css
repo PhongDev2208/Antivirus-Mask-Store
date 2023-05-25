@@ -1,0 +1,79 @@
+body{
+    background-image: url(../images/bg-1.jpg);
+}
+input{
+    background: #F7F7F7;
+}
+.form{
+    width: 50%;
+    margin: 0 auto;
+    height: auto;
+    margin-top: 100px;
+    background: var(--color4);
+    box-shadow: #88a5bf7a 6px 2px 16px, #fffc -6px -2px 16px;
+    padding: 30px;
+}
+.form h2{
+    font-size: 29px;
+    margin: 0;
+    margin-bottom: 30px;
+    color: var(--color6);
+}
+.form .label1{
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    color: var(--color1);
+    margin-bottom: 15px;
+}
+.form .label1 label{
+    width: 48%;
+}
+
+
+.form .nd1{
+    display: flex;
+    justify-content: space-between;
+}
+
+.form .nd1 input{
+    width: 48%;
+    padding: 7px 0;
+   border: 2px solid var(--color1);
+}
+
+
+
+.form .nd2 label{
+    display: block;
+    font-size: 19px;
+    color: var(--color1);
+    margin-top: 30px;
+}
+
+
+.form .nd2 input{
+    width: 100%;
+    padding: 7px 0;
+    border: 2px solid var(--color1);
+    
+}
+
+.form .nd2 .duong{
+    margin-bottom: 38px;
+}
+
+.form .nd2 textarea{
+    width: 100%;
+    margin-top: 40px;
+    border: 2px solid var(--color1);
+}
+
+.form .nd2 .submit{
+    width: 20%;
+    background: var(--color1);
+    color: var(--color4);
+    margin-top: 30px;
+    margin-left: 81%;
+}
+

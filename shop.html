@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antivirus Mask Store</title>
+    <link rel="shortcut icon" href="./assets/images/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/styleshop.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+        integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+     <!-- header -->
+     <div class="header">
+        <div class="header-top">Due to the COVID 19 epidemic, orders may be processed with a slight delay</div>
+        <div class="header-main">
+            <div class="container">
+                <div class="cauhinh">
+                    <div class="logo">
+                        <a href="https://mobiri.se/">
+                            <img src="assets/images/logo_300x300.png" alt="">
+                        </a>
+                    </div>
+                    <div class="cacnut">
+                        <ul>
+                            <li><a href="./index.html">Home</a> </li>
+                            <li><a href="./GIoithieu.html">About Us</a> </li>
+                            <li><a href="">Shop</a></li>
+                            <li><a href="./Contact.html">Contact</a> </li>
+                            <li><a href="./blog.html">Blog</a></li>
+                            <li><div class="phone"><a href="./Login.html">Login</a></div></li>
+                            <li  onclick="ancart()" style=" color: var(--color1); font-size: 19px;">Cart</li>
+                        </ul>
+                    </div>
+                    <div class="icon">
+                        <ul>
+                            <li><a href=""><i class="fa-brands fa-facebook"></i></a></li>
+                            <li> <a href=""><i class="fa-brands fa-twitter"></i></a></li>
+                            <li><a href=""><i class="fa-brands fa-instagram"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="bar" onclick="header()"><i class="fa-solid fa-bars"></i></div>
+                    <div class="anbar">
+                    <div class="headerbar">
+                        <ul>
+                            <li><a href="./index.html">Home</a></li>
+                            <li><a href="./GIoithieu.html">About Us</a></li>
+                            <li><a href="./shop.html">Shop</a></li>
+                            <li><a href="./Contact.html">Contact</a></li>
+                            <li><a href="./blog.html">Blog</a></li>
+                            <li><a href="./login.html">Login</a></li>
+                            <li><a href="">Cart</a></li>
+                        </ul>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+   <div class="sukienan" >
+    <div class="carttt">
+        <h2>Your Cart</h2>
+        <ul>
+            <li id="mh1"><img src="./assets/images/shop-62_9e7ea54a-a911-4cf4-8a39-11e4fbb793b0.webp" alt="">
+                <h2>FFP1 Mask</h2>
+                <p>35.500 VNĐ</p>
+                <div class="soluong">
+                    <button onclick="button1()">+</button>
+                    <p class="hienthi">0</p><button onclick="button2()">-</button>
+                </div>
+                 
+            </li>
+            <li id="mh2" class="mh"><img src="./assets/images/shop-58.webp" alt="">
+                <h2>N95 Face Mask</h2>
+                <p>32.500 VNĐ</p>
+                <div class="soluong">
+                    <button onclick="button3()">+</button>
+                    <p class="hienthi hienthi1">0</p><button onclick="button4()">-</button>
+                </div>
+            </li>
+            <li id="mh3"><img src="./assets/images/top1.jpg" alt="">
+                <h2>Mattana Mask</h2>
+                <p>32.500 VNĐ</p>
+                <div class="soluong">
+                    <button onclick="button5()">+</button>
+                    <p class="hienthi hienthi2">0</p><button onclick="button6()">-</button>
+                </div>
+            </li>
+            <li id="mh4"><img src="./assets/images/top2.jpg" alt="">
+                <h2>Wakamono Mask</h2>
+                <p>32.500 VNĐ</p>
+                <div class="soluong">
+                    <button onclick="button7()">+</button>
+                    <p class="hienthi hienthi3">0</p><button onclick="button8()">-</button>
+                </div>
+            </li>
+            <li id="mh5"><img src="./assets/images/top3.jpg" alt="">
+                <h2>Ecommed Face Mask</h2>
+                <p>32.500 VNĐ</p>
+                <div class="soluong">
+                    <button onclick="button9()">+</button>
+                    <p class="hienthi hienthi4">0</p><button onclick="button10()">-</button>
+                </div>
+            </li>
+            <li id="mh6" class=""><img src="./assets/images/top4.jpg" alt="">
+                <h2>Karibon Face Mask</h2>
+                <p>33.500 VNĐ</p>
+                <div class="soluong">
+                    <button onclick="button11()">+</button>
+                    <p class="hienthi hienthi5">0</p><button onclick="button12()">-</button>
+                </div>
+            </li>
+
+            
+        </ul>
+        
+        <div><h2 onclick="tongtien()">Total</h2> <div class="tien"></div><div>VNĐ</div></div>
+        <button class="btthanhtoan"><a href="./thanhtoan.html">Thanh Toán</a></button>
+    </div>
+</div>
+
+
+
+    <div class="bosungheader">
+        <h2> Shop</h2> <br>
+        
+        <p>Home / Shop</p>
+    </div>
+
+    <!-- header end -->
+
+   
+    
+
+    <div class="ss1">
+        <div class="container">
+            <div class="noidung">
+                <div class="nd1">
+                    <div class="ndc1">
+                        <h2>Category</h2>
+                        <ul>
+                            <li>Medical Device</li>
+                            <li>Masks</li>
+                            <li>Accessories</li>
+                        </ul>
+                    </div>
+                    <div class="ndc2">
+                        <h2>Shop By Material</h2>
+                        <ul>
+                            <li>Synthetic</li>
+                            <li>Cotton</li>
+                            <li>steel</li>
+                            <li>Plastic Fiber</li>
+                            <li>Microfiber</li>
+                        </ul>
+                    </div>
+                    <div class="ndc3">
+                        <h2>Shop By Price</h2>
+                        <ul>
+                            <li>price from low to high</li>
+                            <li>price from high to low</li>
+                            <li><input type="text" placeholder="Please enter the price you want $"></li>
+                        </ul>
+                    </div>
+                    <div class="ndc4">
+                        <h2>Shop By Type</h2>
+                        <ul>
+                            <li>Device</li>
+                            <li>Instrument</li>
+                            <li>Accessories</li>
+                            <li>Tissue</li>
+                            <li>Wipes</li>
+                        </ul>
+                    </div>
+                    <div class="ndc5">
+                        <h2>Shop By Brands</h2>
+                        <ul>
+                            <li>Kidsor</li>
+                            <li>Anbro</li>
+                            <li>Accu</li>
+                            <li>Forio</li>
+                            <li>Bravo </li>
+                            <li>Medi</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="nd2">
+                    <div class="div">
+                        <p>Paginate by </p><input type="text" placeholder="Seach"> <i
+                            class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                    <div class="ndc1">
+                        <ul>
+                            <li id="khautrang1"><img src="./assets/images/shop-62_9e7ea54a-a911-4cf4-8a39-11e4fbb793b0.webp" alt="">
+                                <h2>FFP1 Mask</h2>
+                                <p>35.500 VNĐ</p>
+                            </li>
+                            <li id="khautrang2"><img src="./assets/images/shop-58.webp" alt="">
+                                <h2>N95 Face Mask</h2>
+                                <p>32.500 VNĐ</p>
+                            </li>
+                            <li id="khautrang3"><img src="./assets/images/top1.jpg" alt="">
+                                <h2>Mattana Mask</h2>
+                                <p>32.500 VNĐ</p>
+                            </li>
+                            <li id="khautrang4"><img src="./assets/images/top2.jpg" alt="">
+                                <h2>Wakamono Mask</h2>
+                                <p>32.500 VNĐ</p>
+                            </li>
+                            <li id="khautrang5"><img src="./assets/images/top3.jpg" alt="">
+                                <h2>Ecommed Face Mask</h2>
+                                <p>32.500 VNĐ</p>
+                            </li>
+                            <li id="khautrang6"><img src="./assets/images/top4.jpg" alt="">
+                                <h2>Karibon Face Mask</h2>
+                                <p>33.500 VNĐ</p>
+                            </li>
+                            <li id="khautrang7" ><img src="./assets/images/top5.jpg" alt="">
+                                <h2>3M Mask</h2>
+                                <p>31.500 VNĐ</p>
+                            </li>
+                            <li id="khautrang8"><img src="./assets/images/top7.jpg" alt="">
+                                <h2>Cambridge Face Mask</h2>
+                                <p>33.500 VNĐ</p>
+                            </li>
+                            <li id="khautrang9"><img src="./assets/images/top8.jpg" alt="">
+                                <h2>Dony Mask</h2>
+                                <p>31.500 VNĐ</p>
+                            </li>
+                            <li id="khautrang10"><img src="./assets/images/top10.webp" alt="">
+                                <h2>Thermometer</h2>
+                                <p>31.500 VNĐ</p>
+                            </li>
+                            <li id="khautrang11"><img src="./assets/images/top11.webp" alt="">
+                                <h2>Waterproof thermometer</h2>
+                                <p>31.500 VNĐ</p>
+                            </li>
+                            <li id="khautrang12"><img src="./assets/images/top12.webp" alt="">
+                                <h2>Ear Thermometer</h2>
+                                <p>31.500 VNĐ/p>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                </div>
+                <div class="an1"> 
+                <div class="nd3">
+                    <div class="ndc1"> <img src="./assets/images/shop-7_1a91d68e-244e-41ed-801a-ba3159dfa4d3.webp" alt=""></div>
+                    <div class="ndc2">
+                    <div class="ten">
+                        <h2>FFP1 Mask</h2>
+                    </div>
+                        <div class="gia">
+                            <p>Price:</p>
+                            <p>35.500</p>
+                        </div>
+                        <div class="mau">
+                            <p>color:</p>
+                            <ul>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </div>
+                        <div class="chatlieu">
+                            <p>Material:</p>
+                            <ul>
+                                <li>Fiber</li>
+                                <li>Cotton</li>
+                                <li>Fabric</li>
+                                <li>Cloth</li>
+                            </ul>
+                        </div>
+                        <div class="soluong">
+                            <button >+</button>
+                            <p class="hienthi">1</p><button>-</button>
+                        </div>
+                        <div class="giohang" onclick="giohang1()"><i class="fa-solid fa-cart-plus"></i>Add to Cart</div>
+                        <div class="chitiet">Nam tempus turpis at metus scelerisque placerat nulla deumantos solicitud
+                            felis. Pellentesque diam dolor, elementum etos lobortis des mollis ut risus. Sedcus faucibus
+                            an sullamcorper mattis drostique des commodo pharetras...</div>
+                            <div class="daudong" id="tatkhautrang"><i class="fa-solid fa-xmark"></i></div>
+                        </div>
+                       
+                </div>
+            </div>
+
+
+
+            <div class="an2"> 
+                <div class="nd3">
+                    <div class="ndc1"> <img src="./assets/images/shop-58.webp" alt=""></div>
+                    <div class="ndc2">
+                    <div class="ten">
+                        <h2>N95 Face Mask</h2>
+                    </div>
+                        <div class="gia">
+                            <p>Price:</p>
+                            <p>38.500</p>
+                        </div>
+                        <div class="mau">
+                            <p>color:</p>
+                            <ul>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </div>
+                        <div class="chatlieu">
+                            <p>Material:</p>
+                            <ul>
+                                <li>Fiber</li>
+                                <li>Cotton</li>
+                                <li>Fabric</li>
+                                <li>Cloth</li>
+                            </ul>
+                        </div>
+                        <div class="soluong">
+                            <button>+</button>
+                            <p>1</p><button>-</button>
+                        </div>
+                        <div class="giohang" onclick="giohang2()"><i class="fa-solid fa-cart-plus"></i>Add to Cart</div>
+                        <div class="chitiet">Nam tempus turpis at metus scelerisque placerat nulla deumantos solicitud
+                            felis. Pellentesque diam dolor, elementum etos lobortis des mollis ut risus. Sedcus faucibus
+                            an sullamcorper mattis drostique des commodo pharetras...</div>
+                            <div class="daudong" id="tatkhautrang2"><i class="fa-solid fa-xmark"></i></div>
+                        </div>
+                       
+                </div>
+            </div>
+                
+
+
+            <div class="an3"> 
+                <div class="nd3">
+                    <div class="ndc1"> <img src="./assets/images/top1.jpg" alt=""></div>
+                    <div class="ndc2">
+                    <div class="ten">
+                        <h2>Mattana Mask</h2>
+                    </div>
+                        <div class="gia">
+                            <p>Price:</p>
+                            <p>32.500</p>
+                        </div>
+                        <div class="mau">
+                            <p>color:</p>
+                            <ul>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </div>
+                        <div class="chatlieu">
+                            <p>Material:</p>
+                            <ul>
+                                <li>Fiber</li>
+                                <li>Cotton</li>
+                                <li>Fabric</li>
+                                <li>Cloth</li>
+                            </ul>
+                        </div>
+                        <div class="soluong">
+                            <button>+</button>
+                            <p>1</p><button>-</button>
+                        </div>
+                        <div class="giohang" onclick="giohang3()"><i class="fa-solid fa-cart-plus"></i>Add to Cart</div>
+                        <div class="chitiet">Nam tempus turpis at metus scelerisque placerat nulla deumantos solicitud
+                            felis. Pellentesque diam dolor, elementum etos lobortis des mollis ut risus. Sedcus faucibus
+                            an sullamcorper mattis drostique des commodo pharetras...</div>
+                            <div class="daudong" id="tatkhautrang3"><i class="fa-solid fa-xmark"></i></div>
+                        </div>
+                       
+                </div>
+            </div>
+
+
+            <!-- an4 -->
+
+            <div class="an4"> 
+                <div class="nd3">
+                    <div class="ndc1"> <img src="./assets/images/top2.jpg" alt=""></div>
+                    <div class="ndc2">
+                    <div class="ten">
+                        <h2>Wakamono Mask</h2>
+                    </div>
+                        <div class="gia">
+                            <p>Price:</p>
+                            <p>32.500</p>
+                        </div>
+                        <div class="mau">
+                            <p>color:</p>
+                            <ul>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </div>
+                        <div class="chatlieu">
+                            <p>Material:</p>
+                            <ul>
+                                <li>Fiber</li>
+                                <li>Cotton</li>
+                                <li>Fabric</li>
+                                <li>Cloth</li>
+                            </ul>
+                        </div>
+                        <div class="soluong">
+                            <button>+</button>
+                            <p>1</p><button>-</button>
+                        </div>
+                        <div class="giohang" onclick="giohang4()"><i class="fa-solid fa-cart-plus"></i>Add to Cart</div>
+                        <div class="chitiet">Nam tempus turpis at metus scelerisque placerat nulla deumantos solicitud
+                            felis. Pellentesque diam dolor, elementum etos lobortis des mollis ut risus. Sedcus faucibus
+                            an sullamcorper mattis drostique des commodo pharetras...</div>
+                            <div class="daudong" id="tatkhautrang4"><i class="fa-solid fa-xmark"></i></div>
+                        </div>
+                       
+                </div>
+            </div>
+
+
+            <!-- an5 -->
+
+
+
+            
+            <div class="an5"> 
+                <div class="nd3">
+                    <div class="ndc1"> <img src="./assets/images/top3.jpg" alt=""></div>
+                    <div class="ndc2">
+                    <div class="ten">
+                        <h2>Ecommed Face Mask </h2>
+                    </div>
+                        <div class="gia">
+                            <p>Price:</p>
+                            <p>32.500</p>
+                        </div>
+                        <div class="mau">
+                            <p>color:</p>
+                            <ul>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </div>
+                        <div class="chatlieu">
+                            <p>Material:</p>
+                            <ul>
+                                <li>Fiber</li>
+                                <li>Cotton</li>
+                                <li>Fabric</li>
+                                <li>Cloth</li>
+                            </ul>
+                        </div>
+                        <div class="soluong">
+                            <button>+</button>
+                            <p>1</p><button>-</button>
+                        </div>
+                        <div class="giohang" onclick="giohang5()"><i class="fa-solid fa-cart-plus"></i>Add to Cart</div>
+                        <div class="chitiet">Nam tempus turpis at metus scelerisque placerat nulla deumantos solicitud
+                            felis. Pellentesque diam dolor, elementum etos lobortis des mollis ut risus. Sedcus faucibus
+                            an sullamcorper mattis drostique des commodo pharetras...</div>
+                            <div class="daudong" id="tatkhautrang5"><i class="fa-solid fa-xmark"></i></div>
+                        </div>
+                       
+                </div>
+            </div>
+
+            
+            
+
+
+            
+            <div class="an6"> 
+                <div class="nd3">
+                    <div class="ndc1"> <img src="./assets/images/top4.jpg" alt=""></div>
+                    <div class="ndc2">
+                    <div class="ten">
+                        <h2>Karibon Face Mask</h2>
+                    </div>
+                        <div class="gia">
+                            <p>Price:</p>
+                            <p>33.500</p>
+                        </div>
+                        <div class="mau">
+                            <p>color:</p>
+                            <ul>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </div>
+                        <div class="chatlieu">
+                            <p>Material:</p>
+                            <ul>
+                                <li>Fiber</li>
+                                <li>Cotton</li>
+                                <li>Fabric</li>
+                                <li>Cloth</li>
+                            </ul>
+                        </div>
+                        <div class="soluong">
+                            <button>+</button>
+                            <p>1</p><button>-</button>
+                        </div>
+                        <div class="giohang" onclick="giohang6()"><i class="fa-solid fa-cart-plus"></i>Add to Cart</div>
+                        <div class="chitiet">Nam tempus turpis at metus scelerisque placerat nulla deumantos solicitud
+                            felis. Pellentesque diam dolor, elementum etos lobortis des mollis ut risus. Sedcus faucibus
+                            an sullamcorper mattis drostique des commodo pharetras...</div>
+                            <div class="daudong" id="tatkhautrang6"><i class="fa-solid fa-xmark"></i></div>
+                        </div>
+                       
+                </div>
+            </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+       <!-- content11 -->
+       <div class="content11">
+        <div class="container">
+            <div class="nd">
+                <div class="ndc ndc1">
+                    <h2>About Us</h2>
+                    <p>Pellentesque posuere orci lobortis scelerisque blandit. Donec id tellus lacinia an, tincidunt
+                        risus ac, consequat velit. Quisquemos sodales suscipit tortor ditaemcos condimentum lacus
+                        meleifend.</p>
+                    <img src="./assets/images/logo_300x300.png" alt="">
+                    <ul>
+                        <li><img src="./assets/images/visa.png" alt=""></li>
+                        <li><img src="./assets/images/bitcoin.png" alt=""></li>
+                        <li><img src="./assets/images/union-pay.png" alt=""></li>
+                        <li><img src="./assets/images/paypal.png" alt=""></li>
+                        <li><img src="./assets/images/amazon.png" alt=""></li>
+                        <li><img src="./assets/images/discover.png" alt=""></li>
+                    </ul>
+                </div>
+                <div class="ndc ndc2 ">
+                    <h2>Opening Hours</h2>
+                    <ul>
+                        <li>Monday ------------------- 09.00 - 22.00</li>
+                        <li>Tuesday ------------------- 09.00 - 22.00</li>
+                        <li>Wednesday --------------- 09.00 - 22.00</li>
+                        <li>Thursday ------------------ 09.00 - 22.00</li>
+                        <li>Friday --------------------- 09.00 - 22.00</li>
+                        <li>Saturday ------------------- 09.00 - 22.00</li>
+                        <li>Sunday --------------------- 09.00 - 22.00</li>
+                    </ul>
+                </div>
+                <div class="ndc ndc3">
+                    <h2>Contact us</h2>
+                    <ul>
+                        <li><i class="fa-solid fa-house"></i> 1124 Niki Lauda 455 Newzealand</li>
+                        <li><i class="fa-solid fa-phone"></i> 0000 - 123 - 456789</li>
+                        <li><i class="fa-solid fa-envelope"></i> Support@example.com</li>
+                    </ul>
+                    <h2 class="h2">Newsletter</h2>
+                    <input type="text" placeholder="Your email address">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--   end content11 -->
+    <script src="./assets/css/shop,.js"></script>
+    <script src="./assets/css/base.js"></script>
+</body>
+
+</html>
